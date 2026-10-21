@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLACKWORTH | Luxury Redefined</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0B0B0B;
+  color: #FFFFFF;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 24px 16px;
+  text-align: center;
+  border-bottom: 1px solid #555;
+}
+
+.logo {
+  font-size: 29px;
+  letter-spacing: 5px;
+  font-weight: bold;
+}
+
+.tagline {
+  color: #BFBFBF;
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-top: 8px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 18px 8px;
+  border-bottom: 1px solid #333;
+}
+
+nav a {
+  color: #DDD;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.hero {
+  padding: 85px 20px;
+  text-align: center;
+  background: linear-gradient(145deg, #202020, #080808 70%);
+}
+
+.hero p {
+  color: #C0C0C0;
+  letter-spacing: 4px;
+  font-size: 11px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin: 22px 0;
+  letter-spacing: 4px;
+}
+
+.hero .description {
+  letter-spacing: 0;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 14px 28px;
+  background: #D5D5D5;
+  color: #080808;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+section {
+  padding: 45px 18px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 24px;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  color: #AAA;
+  font-size: 13px;
+  margin-bottom: 28px;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.category {
+  min-height: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(135deg, #252525, #111);
+  border: 1px solid #393939;
+  padding: 18px 8px;
+}
+
+.category h3 {
+  letter-spacing: 2px;
+  font-size: 15px;
+}
+
+.category p {
+  margin-top: 10px;
+  font-size: 11px;
+  color: #AAA;
+}
+
+.collection {
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+.collection h2 {
+  font-size: 26px;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+.collection p {
+  color: #BBB;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  color: #999;
+  font-size: 11px;
+  line-height: 2;
+}
+
+footer strong {
+  color: #EEE;
+  letter-spacing: 3px;
+}
+
+@media (min-width: 700px) {
+  .hero h1 {
+    font-size: 64px;
+  }
+
+  .categories {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">BLACKWORTH</div>
+  <div class="tagline">LUXURY REDEFINED</div>
+</header>
+
+<nav>
+  <a href="#home">HOME</a>
+  <a href="#collections">COLLECTIONS</a>
+  <a href="#about">OUR STORY</a>
+</nav>
+
+<main>
+<section class="hero" id="home">
+  <p>TIMELESS STYLE. MODERN LIVING.</p>
+  <h1>OWN YOUR<br>WORTH.</h1>
+  <p class="description">
+    Discover a world of style, elegance<br>
+    and everyday essentials.
+  </p>
+  <a class="button" href="#collections">EXPLORE COLLECTIONS</a>
+</section>
+
+<section id="collections">
+  <h2 class="section-title">OUR COLLECTIONS</h2>
+  <p class="subtitle">Find your style. Define your worth.</p>
+
+  <div class="categories">
+    <div class="category">
+      <h3>MEN</h3>
+      <p>Style with confidence</p>
+    </div>
+
+    <div class="category">
+      <h3>WOMEN</h3>
+      <p>Elegance in every detail</p>
+    </div>
+
+    <div class="category">
+      <h3>KIDS</h3>
+      <p>Little styles, big dreams</p>
+    </div>
+
+    <div class="category">
+      <h3>TECH</h3>
+      <p>Smarter everyday living</p>
+    </div>
+
+    <div class="category">
+      <h3>KITCHEN</h3>
+      <p>Essentials for your home</p>
+    </div>
+
+    <div class="category">
+      <h3>NEW ARRIVALS</h3>
+      <p>Discover something new</p>
+    </div>
+  </div>
+</section>
+
+<section class="collection" id="about">
+  <h2>THE BLACKWORTH STANDARD</h2>
+  <p>
+    Thoughtful style. Everyday essentials.<br>
+    A modern shopping experience designed around you.
+  </p>
+  <a class="button" href="#collections">DISCOVER MORE</a>
+</section>
+</main>
+
+<footer>
+  <strong>BLACKWORTH</strong>
+  <p>Luxury redefined. Style your world.</p>
+  <p>© 2026 BLACKWORTH. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
