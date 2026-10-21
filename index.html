@@ -3,172 +3,574 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050505">
+<meta name="description" content="BLACKWORTH — Luxury redefined. Discover premium products, timeless style and everyday essentials.">
 <title>BLACKWORTH | Luxury Redefined</title>
 
 <style>
+:root {
+  --black: #050505;
+  --surface: #0B0B0B;
+  --gold: #D4AF37;
+  --gold-light: #F2D27A;
+  --maroon: #4A0008;
+  --maroon-light: #70000C;
+  --text: #F5F0E5;
+  --muted: #B8AE9A;
+  --border: #806323;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: #000000;
-  color: #D4AF37;
-  font-family: Arial, sans-serif;
+  background: var(--black);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.gold {
+  color: var(--gold);
 }
 
 header {
-  padding: 24px 16px;
-  text-align: center;
-  border-bottom: 1px solid #555;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(5, 5, 5, .97);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+  max-width: 1250px;
+  margin: auto;
+  min-height: 82px;
+  padding: 15px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .logo {
-  font-size: 29px;
-  letter-spacing: 5px;
+  color: var(--gold);
+  font-family: Georgia, serif;
+  font-size: 25px;
   font-weight: bold;
+  letter-spacing: 2px;
+  white-space: nowrap;
 }
 
-.tagline {
-  color: #BFBFBF;
-  font-size: 11px;
-  letter-spacing: 3px;
-  margin-top: 8px;
+.logo small {
+  display: block;
+  font: 9px Arial, sans-serif;
+  letter-spacing: 4px;
+  text-align: center;
 }
 
 nav {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 18px 8px;
-  border-bottom: 1px solid #333;
+  align-items: center;
+  gap: 25px;
 }
 
 nav a {
-  color: #DDD;
-  text-decoration: none;
+  color: var(--gold-light);
   font-size: 12px;
+  letter-spacing: 1px;
+}
+
+nav a:hover {
+  color: white;
+}
+
+.cart-button {
+  color: var(--gold);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 9px 13px;
 }
 
 .hero {
-  padding: 85px 20px;
-  text-align: center;
-  background: linear-gradient(145deg, #202020, #080808 70%);
+  min-height: 490px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 30px;
+  padding: 65px max(6%, calc((100% - 1200px) / 2));
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 85% 40%, #251507 0%, transparent 43%),
+    linear-gradient(120deg, #050505 60%, #160407);
+  border-bottom: 1px solid var(--border);
+  position: relative;
 }
 
-.hero p {
-  color: #C0C0C0;
-  letter-spacing: 4px;
-  font-size: 11px;
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: #4A0008;
+  filter: blur(100px);
+  opacity: .25;
+  right: 5%;
+  top: 10%;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  color: var(--gold-light);
+  letter-spacing: 5px;
+  font-size: 13px;
 }
 
 .hero h1 {
-  font-size: 42px;
-  margin: 22px 0;
-  letter-spacing: 4px;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--gold);
+  font-size: clamp(38px, 5.4vw, 70px);
+  line-height: 1.1;
+  margin: 18px 0;
 }
 
-.hero .description {
-  letter-spacing: 0;
-  line-height: 1.8;
-  font-size: 14px;
+.hero h2 {
+  color: var(--gold-light);
+  letter-spacing: 5px;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.hero p {
+  color: var(--muted);
+  margin: 20px 0 28px;
 }
 
 .button {
   display: inline-block;
-  margin-top: 28px;
-  padding: 14px 28px;
-  background: #D5D5D5;
-  color: #080808;
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 2px;
+  padding: 13px 25px;
+  background: var(--maroon);
+  color: var(--gold-light);
+  border: 1px solid var(--gold);
+  letter-spacing: 1px;
+  transition: .25s;
 }
 
-section {
-  padding: 45px 18px;
+.button:hover {
+  background: var(--maroon-light);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.hero-art {
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.luxury-box {
+  width: min(340px, 90%);
+  min-height: 250px;
+  padding: 40px 20px;
+  background: linear-gradient(145deg, #151515, #030303);
+  border: 1px solid #63491d;
+  box-shadow: 18px 20px 55px #000;
+  transform: rotate(-3deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-.section-title {
-  font-size: 24px;
-  letter-spacing: 3px;
-  margin-bottom: 12px;
+.crown {
+  font-size: 55px;
+  color: var(--gold);
 }
 
-.subtitle {
-  color: #AAA;
+.luxury-box strong {
+  color: var(--gold);
+  font-family: Georgia, serif;
+  font-size: 27px;
+  letter-spacing: 2px;
+}
+
+.luxury-box span {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 4px;
+}
+
+.benefits {
+  max-width: 1200px;
+  margin: auto;
+  padding: 32px 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  text-align: center;
+  border-bottom: 1px solid #261b0b;
+}
+
+.benefit {
+  border-right: 1px solid var(--border);
+  padding: 5px;
+}
+
+.benefit:last-child {
+  border: 0;
+}
+
+.benefit .icon {
+  color: var(--gold);
+  font-size: 28px;
+}
+
+.benefit h3 {
+  color: var(--gold-light);
   font-size: 13px;
-  margin-bottom: 28px;
+  margin: 7px 0;
+}
+
+.benefit p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.section {
+  max-width: 1250px;
+  margin: auto;
+  padding: 65px 24px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-title h2 {
+  color: var(--gold);
+  font-family: Georgia, serif;
+  font-size: clamp(23px, 3vw, 32px);
+  letter-spacing: 3px;
+}
+
+.section-title p {
+  color: var(--muted);
+  margin-top: 7px;
+  font-size: 13px;
 }
 
 .categories {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
 }
 
 .category {
-  min-height: 125px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background: linear-gradient(135deg, #252525, #111);
-  border: 1px solid #393939;
-  padding: 18px 8px;
+  min-height: 155px;
+  border: 1px solid var(--border);
+  background: linear-gradient(145deg, #15110a, #080808 65%);
+  padding: 25px 10px;
+  text-align: center;
+  transition: .25s;
+}
+
+.category:hover {
+  border-color: var(--gold-light);
+  background: linear-gradient(145deg, #310008, #080808);
+  transform: translateY(-4px);
+}
+
+.category .icon {
+  font-size: 38px;
+  display: block;
+  margin-bottom: 12px;
 }
 
 .category h3 {
-  letter-spacing: 2px;
-  font-size: 15px;
+  font-size: 12px;
+  color: var(--gold-light);
+  letter-spacing: 1px;
 }
 
-.category p {
-  margin-top: 10px;
-  font-size: 11px;
-  color: #AAA;
+.category span {
+  color: var(--gold);
 }
 
-.collection {
-  border-top: 1px solid #333;
-  border-bottom: 1px solid #333;
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
 }
 
-.collection h2 {
-  font-size: 26px;
-  letter-spacing: 3px;
-  margin-bottom: 15px;
+.product {
+  background: var(--surface);
+  border: 1px solid #49391c;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+  transition: .25s;
 }
 
-.collection p {
-  color: #BBB;
-  line-height: 1.8;
+.product:hover {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px #000;
+}
+
+.product-image {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse, #21180c, #080808 70%);
+  margin-bottom: 14px;
+  font-size: 65px;
+}
+
+.badge {
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  color: var(--gold-light);
+  background: var(--maroon);
+  border: 1px solid #78252a;
+  font-size: 10px;
+  padding: 4px 7px;
+}
+
+.product h3 {
+  color: var(--text);
   font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.price {
+  color: var(--gold);
+  font-size: 17px;
+}
+
+.rating {
+  color: var(--gold-light);
+  font-size: 12px;
+  margin: 6px 0 12px;
+}
+
+.add-button {
+  width: 100%;
+  padding: 10px;
+  background: var(--maroon);
+  border: 1px solid var(--border);
+  color: var(--gold-light);
+  transition: .2s;
+}
+
+.add-button:hover {
+  background: var(--maroon-light);
+  color: white;
+}
+
+.story {
+  padding: 65px 24px;
+  background: linear-gradient(110deg, #240005, #4A0008, #210004);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+.story h2 {
+  color: var(--gold-light);
+  font-family: Georgia, serif;
+  font-size: clamp(25px, 4vw, 40px);
+  font-style: italic;
+}
+
+.story p {
+  max-width: 650px;
+  margin: 15px auto 25px;
+  color: #e3c9bd;
+}
+
+.newsletter {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.newsletter h2 {
+  color: var(--gold);
+  font-family: Georgia, serif;
+  font-size: 28px;
+}
+
+.newsletter p {
+  color: var(--muted);
+  margin: 10px 0 22px;
+}
+
+.newsletter form {
+  display: flex;
+  justify-content: center;
+  max-width: 470px;
+  margin: auto;
+  gap: 8px;
+}
+
+.newsletter input {
+  min-width: 0;
+  flex: 1;
+  padding: 13px;
+  background: #101010;
+  color: white;
+  border: 1px solid var(--border);
+  outline-color: var(--gold);
+}
+
+.newsletter button {
+  padding: 12px 18px;
 }
 
 footer {
+  background: #030303;
+  border-top: 2px solid var(--maroon);
+  padding: 35px 20px;
   text-align: center;
-  padding: 30px 15px;
-  color: #999;
-  font-size: 11px;
-  line-height: 2;
 }
 
-footer strong {
-  color: #EEE;
-  letter-spacing: 3px;
+footer .logo {
+  display: inline-block;
+  margin-bottom: 12px;
 }
 
-@media (min-width: 700px) {
-  .hero h1 {
-    font-size: 64px;
+footer p {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 7px 0;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 18px 0;
+  color: var(--gold-light);
+  font-size: 12px;
+}
+
+#toast {
+  position: fixed;
+  z-index: 300;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--maroon);
+  color: var(--gold-light);
+  border: 1px solid var(--gold);
+  padding: 12px 20px;
+  display: none;
+  max-width: 90%;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 17px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 55px 22px;
+  }
+
+  .hero-art {
+    min-height: 240px;
+  }
+
+  .benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefit:nth-child(2) {
+    border-right: 0;
   }
 
   .categories {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .product {
+    padding: 10px;
+  }
+
+  .product-image {
+    height: 120px;
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 380px) {
+  .logo {
+    font-size: 20px;
+  }
+
+  nav {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 11px;
+  }
+
+  .products {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .product-image {
+    height: 95px;
   }
 }
 </style>
@@ -177,79 +579,291 @@ footer strong {
 <body>
 
 <header>
-  <div class="logo">BLACKWORTH</div>
-  <div class="tagline">LUXURY REDEFINED</div>
-</header>
+  <div class="navbar">
+    <a href="#home" class="logo">
+      ♛ BLACKWORTH
+      <small>LUXURY REDEFINED</small>
+    </a>
 
-<nav>
-  <a href="#home">HOME</a>
-  <a href="#collections">COLLECTIONS</a>
-  <a href="#about">OUR STORY</a>
-</nav>
+    <nav>
+      <a href="#home">HOME</a>
+      <a href="#categories">SHOP</a>
+      <a href="#products">COLLECTIONS</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+
+    <button class="cart-button" onclick="showCart()" aria-label="View cart">
+      🛒 <span id="cart-count">0</span>
+    </button>
+  </div>
+</header>
 
 <main>
 <section class="hero" id="home">
-  <p>TIMELESS STYLE. MODERN LIVING.</p>
-  <h1>OWN YOUR<br>WORTH.</h1>
-  <p class="description">
-    Discover a world of style, elegance<br>
-    and everyday essentials.
-  </p>
-  <a class="button" href="#collections">EXPLORE COLLECTIONS</a>
-</section>
+  <div class="hero-content">
+    <p class="eyebrow">WELCOME TO</p>
+    <h1>BLACKWORTH</h1>
+    <h2>LUXURY REDEFINED</h2>
+    <p>Premium products. Timeless style.<br>Made for you.</p>
+    <a href="#products" class="button">SHOP NOW &nbsp; →</a>
+  </div>
 
-<section id="collections">
-  <h2 class="section-title">OUR COLLECTIONS</h2>
-  <p class="subtitle">Find your style. Define your worth.</p>
-
-  <div class="categories">
-    <div class="category">
-      <h3>MEN</h3>
-      <p>Style with confidence</p>
-    </div>
-
-    <div class="category">
-      <h3>WOMEN</h3>
-      <p>Elegance in every detail</p>
-    </div>
-
-    <div class="category">
-      <h3>KIDS</h3>
-      <p>Little styles, big dreams</p>
-    </div>
-
-    <div class="category">
-      <h3>TECH</h3>
-      <p>Smarter everyday living</p>
-    </div>
-
-    <div class="category">
-      <h3>KITCHEN</h3>
-      <p>Essentials for your home</p>
-    </div>
-
-    <div class="category">
-      <h3>NEW ARRIVALS</h3>
-      <p>Discover something new</p>
+  <div class="hero-art" aria-label="Blackworth luxury gift box">
+    <div class="luxury-box">
+      <div class="crown">♛</div>
+      <strong>BLACKWORTH</strong>
+      <span>LUXURY REDEFINED</span>
     </div>
   </div>
 </section>
 
-<section class="collection" id="about">
-  <h2>THE BLACKWORTH STANDARD</h2>
-  <p>
-    Thoughtful style. Everyday essentials.<br>
-    A modern shopping experience designed around you.
+<section class="benefits" aria-label="Our services">
+  <div class="benefit">
+    <div class="icon">♧</div>
+    <h3>FAST SHIPPING</h3>
+    <p>Across India</p>
+  </div>
+  <div class="benefit">
+    <div class="icon">♢</div>
+    <h3>SECURE PAYMENTS</h3>
+    <p>Shop with confidence</p>
+  </div>
+  <div class="benefit">
+    <div class="icon">★</div>
+    <h3>PREMIUM QUALITY</h3>
+    <p>Only the best</p>
+  </div>
+  <div class="benefit">
+    <div class="icon">♧</div>
+    <h3>SUPPORT</h3>
+    <p>We're here to help</p>
+  </div>
+</section>
+
+<section class="section" id="categories">
+  <div class="section-title">
+    <h2>SHOP BY CATEGORY</h2>
+    <p>Find what fits your style</p>
+  </div>
+
+  <div class="categories">
+    <a class="category" href="#products" onclick="chooseCategory('Kitchen Accessories')">
+      <span class="icon">🍳</span>
+      <h3>KITCHEN ACCESSORIES</h3>
+      <span>→</span>
+    </a>
+
+    <a class="category" href="#products" onclick="chooseCategory('Men’s Wear')">
+      <span class="icon">🧥</span>
+      <h3>MEN'S WEAR</h3>
+      <span>→</span>
+    </a>
+
+    <a class="category" href="#products" onclick="chooseCategory('Women’s Wear')">
+      <span class="icon">👗</span>
+      <h3>WOMEN'S WEAR</h3>
+      <span>→</span>
+    </a>
+
+    <a class="category" href="#products" onclick="chooseCategory('Kidz')">
+      <span class="icon">🧸</span>
+      <h3>KIDZ</h3>
+      <span>→</span>
+    </a>
+
+    <a class="category" href="#products" onclick="chooseCategory('Tech')">
+      <span class="icon">🎧</span>
+      <h3>TECH</h3>
+      <span>→</span>
+    </a>
+  </div>
+</section>
+
+<section class="section" id="products">
+  <div class="section-title">
+    <h2>FEATURED PRODUCTS</h2>
+    <p id="product-subtitle">Our top picks for you</p>
+  </div>
+
+  <div class="products" id="product-grid">
+
+    <article class="product" data-category="Men’s Wear">
+      <span class="badge">FEATURED</span>
+      <div class="product-image">⌚</div>
+      <h3>Luxury Watch</h3>
+      <p class="price">₹2,999</p>
+      <p class="rating">★★★★★</p>
+      <button class="add-button" onclick="addToCart('Luxury Watch',2999)">ADD TO CART</button>
+    </article>
+
+    <article class="product" data-category="Tech">
+      <span class="badge">POPULAR</span>
+      <div class="product-image">🎒</div>
+      <h3>Premium Backpack</h3>
+      <p class="price">₹1,999</p>
+      <p class="rating">★★★★★</p>
+      <button class="add-button" onclick="addToCart('Premium Backpack',1999)">ADD TO CART</button>
+    </article>
+
+    <article class="product" data-category="Tech">
+      <div class="product-image">🎧</div>
+      <h3>Wireless Earbuds</h3>
+      <p class="price">₹1,499</p>
+      <p class="rating">★★★★★</p>
+      <button class="add-button" onclick="addToCart('Wireless Earbuds',1499)">ADD TO CART</button>
+    </article>
+
+    <article class="product" data-category="Women’s Wear">
+      <span class="badge">FEATURED</span>
+      <div class="product-image">🕶️</div>
+      <h3>Stylish Sunglasses</h3>
+      <p class="price">₹999</p>
+      <p class="rating">★★★★★</p>
+      <button class="add-button" onclick="addToCart('Stylish Sunglasses',999)">ADD TO CART</button>
+    </article>
+
+    <article class="product" data-category="Kitchen Accessories">
+      <div class="product-image">🍳</div>
+      <h3>Kitchen Essentials</h3>
+      <p class="price">₹799</p>
+      <p class="rating">★★★★★</p>
+      <button class="add-button" onclick="addToCart('Kitchen Essentials',799)">ADD TO CART</button>
+    </article>
+
+    <article class="product" data-category="Men’s Wear">
+      <div class="product-image">👔</div>
+      <h3>Classic Shirt</h3>
+      <p class="price">₹1,299</p>
+      <p class="rating">★★★★★</p>
+      <button class="add-button" onclick="addToCart('Classic Shirt',1299)">ADD TO CART</button>
+    </article>
+
+    <article class="product" data-category="Women’s Wear">
+      <div class="product-image">👜</div>
+      <h3>Elegant Handbag</h3>
+      <p class="price">₹1,799</p>
+      <p class="rating">★★★★★</p>
+      <button class="add-button" onclick="addToCart('Elegant Handbag',1799)">ADD TO CART</button>
+    </article>
+
+    <article class="product" data-category="Kidz">
+      <div class="product-image">🧸</div>
+      <h3>Soft Teddy Bear</h3>
+      <p class="price">₹699</p>
+      <p class="rating">★★★★★</p>
+      <button class="add-button" onclick="addToCart('Soft Teddy Bear',699)">ADD TO CART</button>
+    </article>
+
+  </div>
+
+  <p style="text-align:center;color:var(--muted);font-size:12px;margin-top:22px">
+    Demo products and prices — connect your actual product catalogue before selling.
   </p>
-  <a class="button" href="#collections">DISCOVER MORE</a>
+</section>
+
+<section class="story" id="about">
+  <h2>More Than Just Shopping — It's a Lifestyle</h2>
+  <p>
+    Discover timeless style, thoughtful essentials and a premium shopping
+    experience with BLACKWORTH.
+  </p>
+  <a href="#categories" class="button">EXPLORE COLLECTIONS</a>
+</section>
+
+<section class="newsletter" id="contact">
+  <h2>JOIN THE BLACKWORTH WORLD</h2>
+  <p>Stay inspired by timeless style and new collections.</p>
+
+  <form onsubmit="subscribe(event)">
+    <input type="email" id="email" placeholder="Enter your email" required>
+    <button class="button" type="submit">JOIN US</button>
+  </form>
+  <p id="newsletter-message" aria-live="polite"></p>
 </section>
 </main>
 
 <footer>
-  <strong>BLACKWORTH</strong>
-  <p>Luxury redefined. Style your world.</p>
-  <p>© 2026 BLACKWORTH. All rights reserved.</p>
+  <a href="#home" class="logo">
+    ♛ BLACKWORTH
+    <small>LUXURY REDEFINED</small>
+  </a>
+
+  <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#categories">Shop</a>
+    <a href="#products">Collections</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <p>More Than Just Shopping — It's a Lifestyle.</p>
+  <p>© <span id="year"></span> BLACKWORTH. All rights reserved.</p>
 </footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+let cart = [];
+
+function notify(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.style.display = "block";
+
+  clearTimeout(window.toastTimer);
+  window.toastTimer = setTimeout(() => {
+    toast.style.display = "none";
+  }, 2600);
+}
+
+function addToCart(name, price) {
+  cart.push({ name, price });
+  document.getElementById("cart-count").textContent = cart.length;
+  notify(name + " added to your demo cart.");
+}
+
+function showCart() {
+  if (cart.length === 0) {
+    notify("Your cart is empty.");
+    return;
+  }
+
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
+  const items = cart.map(item => item.name).join(", ");
+
+  notify("Demo cart: " + items + " | Total: ₹" + total.toLocaleString("en-IN"));
+}
+
+function chooseCategory(category) {
+  document.getElementById("product-subtitle").textContent =
+    "Showing: " + category;
+
+  const products = document.querySelectorAll(".product");
+  let found = 0;
+
+  products.forEach(product => {
+    const matches = product.dataset.category === category;
+    product.style.display = matches ? "" : "none";
+    if (matches) found++;
+  });
+
+  if (!found) {
+    document.getElementById("product-subtitle").textContent =
+      "New products coming soon to " + category;
+  }
+}
+
+function subscribe(event) {
+  event.preventDefault();
+  document.getElementById("newsletter-message").textContent =
+    "Thanks for your interest! Newsletter signup needs an email service connection.";
+  document.getElementById("email").value = "";
+}
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
+ 
